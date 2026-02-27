@@ -4,6 +4,7 @@ import com.example.moviespring.models.Movie;
 import com.example.moviespring.services.MovieService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -34,5 +35,13 @@ public class MovieController {
         Movie first = service.getFirst();
         mav.addObject("firstMovie",first);
         return new ModelAndView("first");
+    }
+
+    @GetMapping("/single-movie")
+    public ModelAndView getSingle(@RequestParam String id){
+        ModelAndView mav = new ModelAndView("application/single-movie");
+        Movie single = service.getSingleMovie(id);
+        mav.addObject("movie", single);
+        return mav;
     }
 }

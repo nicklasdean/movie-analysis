@@ -7,10 +7,14 @@
 <body>
 <h2>First 3 movies</h2>
 
-<main th:each="movie: ${movies}">
-  <p>
-    <span th:text="${movie.title}">Title</span>
-  </p>
+<main>
+    <h1>Movies</h1>
+
+    <ul>
+        <li th:each="movie : ${movies}">
+            <span th:text="${movie.title}">Title</span>
+        </li>
+    </ul>
 </main>
 
 </body>

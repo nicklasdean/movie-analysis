@@ -17,4 +17,8 @@ public class MovieService {
     public int getCount(){
         return allMovies.size();
     }
+
+    public Movie getSingleMovie(String id){
+        return allMovies.get(Integer.parseInt(id));
+    }
 }
